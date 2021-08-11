@@ -1,0 +1,19 @@
+{
+    "type":"postgres",
+    "host":"",
+    "port": 5432,
+    "username": "npjlavzrcsjlmj",
+    "password": "",
+    "database": "del8p2vfs2qqr0",
+    "connectionString": "connectionString",
+    "ssl": { "rejectUnauthorized": false },
+    "entities": [
+        "./src/models/*.ts"
+    ],
+    "migrations": [
+        "./src/database/migrations/*.ts"
+    ],
+    "cli": {
+        "migrationsDir": "./src/database/migrations"
+    }
+}
