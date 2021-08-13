@@ -2,14 +2,23 @@ import {
     Entity, 
     Column, 
     PrimaryGeneratedColumn, 
+    OneToMany,
     CreateDateColumn, 
     UpdateDateColumn, 
 } from 'typeorm';
+import Datasheet from './Datasheet';
+import Measures from './Measures';
 
 @Entity('users')
 class User {
     @PrimaryGeneratedColumn('uuid')
     id: string;
+
+    @OneToMany(() => Datasheet, datasheet => datasheet.user)
+    datasheet: Datasheet[]
+
+    @OneToMany(() => Measures, measures => measures.user)
+    measures: Measures[]
 
     @Column()
     name: string;
@@ -19,12 +28,6 @@ class User {
 
     @Column()
     password: string;
-
-    @Column()
-    surname: string;
-
-    @Column()
-    profession: string;
 
     @CreateDateColumn()
     createDate: Date;
