@@ -1,4 +1,4 @@
-import Datasheet, { TBiologicalSex }  from '../models/Datasheet';
+import Datasheet from '../models/Datasheet';
 import { getCustomRepository } from 'typeorm';
 import DatasheetsRepository from '../repositories/DatasheetsRepository';
 import { hash } from 'bcryptjs';
@@ -6,9 +6,9 @@ import AppError from '../errors/AppError';
 import User from '../models/User';
 
 interface Request{ 
-    userId: String,
+    userId: string,
     date: Date,
-    sex: TBiologicalSex,
+    sex: string,
     birthDate: Date,
     height: number,
     weight: number,
