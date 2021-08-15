@@ -3,8 +3,6 @@ import {
     Column, 
     PrimaryGeneratedColumn, 
     ManyToOne,
-    OneToMany,
-    RelationId,
     JoinColumn,
     CreateDateColumn, 
     UpdateDateColumn, 
@@ -26,43 +24,43 @@ class Measures {
     @Column()
     date: Date;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     waist: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     belly: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     hip: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     breastplate: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     shoulder: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     rightArm: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     leftArm: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     rightForearm: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     leftForearm: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     rightLeg: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     leftLeg: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     rightCalf: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true , type: 'float'})
     leftCalf: number;
 
     @CreateDateColumn()

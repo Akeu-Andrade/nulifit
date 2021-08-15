@@ -3,33 +3,18 @@ import {
     Column, 
     PrimaryGeneratedColumn, 
     ManyToOne,
-    OneToMany,
-    RelationId,
     JoinColumn,
     CreateDateColumn, 
     UpdateDateColumn, 
 } from 'typeorm';
 import User from './User';
-
-export const SEXO_BIOLOGICO = {
-    FEMININO: 'FEMININO',
-    MASCULINO: 'MASCULINO',
-}
-
-export const SEXO_BIOLOGICO_VALUES: TBiologicalSex[] = [
-    'FEMININO', 
-    'MASCULINO',
-];
-
-export type TBiologicalSex = 'FEMININO' | 'MASCULINO';
-
 @Entity('datasheets')
 class Datasheet {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column({ nullable: true })
-    userId: String;
+    userId: string;
 
     @ManyToOne(() => User, user => user.datasheet)
     @JoinColumn()
@@ -39,15 +24,15 @@ class Datasheet {
     date: Date;
 
     @Column()
-    sex: TBiologicalSex;
+    sex: string;
 
     @Column()
     birthDate: Date;
 
-    @Column()
+    @Column({type: 'float', default: 0})
     height: number;
 
-    @Column()
+    @Column({type: 'float', default: 0})
     weight: number;
 
     @CreateDateColumn()
