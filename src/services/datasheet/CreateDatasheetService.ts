@@ -1,25 +1,21 @@
-import Datasheet from '../models/Datasheet';
+import Datasheet from '../../models/Datasheet';
 import { getCustomRepository } from 'typeorm';
-import DatasheetsRepository from '../repositories/DatasheetsRepository';
-import { hash } from 'bcryptjs';
-import AppError from '../errors/AppError';
-import User from '../models/User';
+import DatasheetsRepository from '../../repositories/DatasheetsRepository';
 
 interface Request{ 
     userId: string,
-    date: Date,
-    sex: string,
+    sex: number,
     birthDate: Date,
     height: number,
     weight: number,
 }
 
 class CreateDatasheetService{
-    public async execute({userId, date, sex, birthDate, height, weight}: Request): Promise<Datasheet>{
+    public async execute({userId, sex, birthDate, height, weight}: Request): Promise<Datasheet>{
         const datasheetsRepository = getCustomRepository(DatasheetsRepository);
         
         const datasheet = datasheetsRepository.create({
-            userId, date, sex, birthDate, height, weight
+            userId, sex, birthDate, height, weight
         });
 
         await datasheetsRepository.save(datasheet);

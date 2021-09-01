@@ -1,18 +1,33 @@
 import { Router } from 'express';
 import { getRepository } from 'typeorm';
 
-import CreateDatasheetsService from '../services/CreateDatasheetService';
+import CreateDatasheetsService from '../services/datasheet/CreateDatasheetService';
+import UpdateDatasheetsService from '../services/datasheet/UpdateDatasheetService';
 
 const datasheetsRoutes = Router();
 
 datasheetsRoutes.post('/', async (request, response)=> {
 
-    const {userId, date, sex, birthDate, height, weight} = request.body;
+    const {userId, sex, birthDate, height, weight} = request.body;
 
     const createDatasheets = new CreateDatasheetsService();
 
     const datasheet = await createDatasheets.execute({
-        userId, date, sex, birthDate, height, weight
+        userId, sex, birthDate, height, weight
+    });
+
+    return response.json(datasheet);
+    
+})
+
+datasheetsRoutes.put('/', async (request, response)=> {
+
+    const {userId, goal} = request.body;
+
+    const updateDatasheets = new UpdateDatasheetsService();
+
+    const datasheet = await updateDatasheets.execute({
+        userId, goal
     });
 
     return response.json(datasheet);
