@@ -21,10 +21,10 @@ class Datasheet {
     user: User;
 
     @Column()
-    date: Date;
+    sex: number;
 
-    @Column()
-    sex: string;
+    @Column({default: 1})
+    goal: number;
 
     @Column()
     birthDate: Date;
