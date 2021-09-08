@@ -8,14 +8,15 @@ interface Request{
     birthDate: Date,
     height: number,
     weight: number,
+    goal: number,
 }
 
 class CreateDatasheetService{
-    public async execute({userId, sex, birthDate, height, weight}: Request): Promise<Datasheet>{
+    public async execute({userId, sex, birthDate, height, weight, goal}: Request): Promise<Datasheet>{
         const datasheetsRepository = getCustomRepository(DatasheetsRepository);
         
         const datasheet = datasheetsRepository.create({
-            userId, sex, birthDate, height, weight
+            userId, sex, birthDate, height, weight, goal
         });
 
         await datasheetsRepository.save(datasheet);
