@@ -8,12 +8,12 @@ const datasheetsRoutes = Router();
 
 datasheetsRoutes.post('/', async (request, response)=> {
 
-    const {userId, sex, birthDate, height, weight} = request.body;
+    const {userId, sex, birthDate, height, weight, goal} = request.body;
 
     const createDatasheets = new CreateDatasheetsService();
 
     const datasheet = await createDatasheets.execute({
-        userId, sex, birthDate, height, weight
+        userId, sex, birthDate, height, weight, goal
     });
 
     return response.json(datasheet);
