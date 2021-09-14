@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import Datasheet from './Datasheet';
 import Measures from './Measures';
+import Macronutrient from './Macronutrient';
 
 @Entity('users')
 class User {
@@ -19,6 +20,9 @@ class User {
 
     @OneToMany(() => Measures, measures => measures.user)
     measures: Measures[]
+
+    @OneToMany(() => Macronutrient, macronutrient => macronutrient.user)
+    macronutrient: Macronutrient[]
 
     @Column()
     name: string;
