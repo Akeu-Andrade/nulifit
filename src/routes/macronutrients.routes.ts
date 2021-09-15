@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getRepository } from 'typeorm';
 
 import CreateMacronutrientsService from '../services/macronutrient/CreateMacronutrientService';
-import GetMacronutrientService from '../services/macronutrient/GetMacronutrientService';
+import GetMacronutrientsService from '../services/macronutrient/GetMacronutrientsService';
 
 const macronutrientsRoutes = Router();
 
@@ -24,9 +24,9 @@ macronutrientsRoutes.post('/user/', async (request, response)=> {
 
     const {userId} = request.body;
 
-    const getMacronutrient = new GetMacronutrientService();
+    const getMacronutrients = new GetMacronutrientsService();
 
-    const macronutrient = await getMacronutrient.execute({
+    const macronutrient = await getMacronutrients.execute({
         userId
     });
 
