@@ -8,19 +8,19 @@ interface Request{
     userId: string
 }
 
-class GetMacronutrientService{
-    public async execute({userId}: Request): Promise<Macronutrient>{
+// class GetMacronutrientService{
+//     public async execute({userId}: Request): Promise<Macronutrient>{
 
-        const macronutrientsRepository = getCustomRepository(MacronutrientsRepository);
+//         const macronutrientsRepository = getCustomRepository(MacronutrientsRepository);
         
-        const macronutrient = await macronutrientsRepository.findByUserId(userId);
+//         const macronutrient = await macronutrientsRepository.findByUserId(userId);
 
-        if (!macronutrient) {
-            throw new AppError('Usuário sem informações!.', 401);
-        }
+//         if (!macronutrient) {
+//             throw new AppError('Usuário sem informações!.', 401);
+//         }
 
-        return macronutrient; 
-    }
-}
+//         return macronutrient; 
+//     }
+// }
 
 export default GetMacronutrientService;

@@ -20,19 +20,19 @@ macronutrientsRoutes.post('/', async (request, response)=> {
     
 })
 
-macronutrientsRoutes.get('/', async (request, response)=> {
+// macronutrientsRoutes.get('/', async (request, response)=> {
 
-    const {userId} = request.body;
+//     const {userId} = request.body;
 
-    const getMacronutrient = new GetMacronutrientService();
+//     const getMacronutrient = new GetMacronutrientService();
 
-    const macronutrient = await getMacronutrient.execute(
-        userId
-    );
+//     const macronutrient = await getMacronutrient.execute(
+//         userId
+//     );
 
-    return response.json(macronutrient);
+//     return response.json(macronutrient);
     
-})
+// })
 
 export default macronutrientsRoutes;
 
