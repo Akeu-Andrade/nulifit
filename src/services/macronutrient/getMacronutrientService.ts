@@ -1,26 +1,21 @@
-// import Macronutrient from '../../models/Macronutrient';
-// import User from '../../models/User';
-// import { getCustomRepository } from 'typeorm';
-// import MacronutrientsRepository from '../../repositories/MacronutrientsRepository';
-// import AppError from '../../errors/AppError';
+import Macronutrient from '../../models/Macronutrient';
+import User from '../../models/User';
+import { getCustomRepository } from 'typeorm';
+import MacronutrientsRepository from '../../repositories/MacronutrientsRepository';
 
-// interface Request{ 
-//     userId: string
-// }
+interface Request{ 
+    userId: string
+}
 
-// class GetMacronutrientService{
-//     public async execute({userId}: Request): Promise<Macronutrient>{
+class GetMacronutrientService{
+    public async execute({userId}: Request): Promise<Macronutrient>{
 
-//         const macronutrientsRepository = getCustomRepository(MacronutrientsRepository);
+        const macronutrientsRepository = getCustomRepository(MacronutrientsRepository);
         
-//         const macronutrient = await macronutrientsRepository.findByUserId(userId);
+        const macronutrient = await macronutrientsRepository.findByUserId(userId);
 
-//         if (!macronutrient) {
-//             throw new AppError('Usuário sem informações!.', 401);
-//         }
+        return macronutrient; 
+    }
+}
 
-//         return macronutrient; 
-//     }
-// }
-
-// export default GetMacronutrientService;
+export default GetMacronutrientService;
