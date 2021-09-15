@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getRepository } from 'typeorm';
 
 import CreateMacronutrientsService from '../services/macronutrient/CreateMacronutrientService';
-import GetMacronutrientService from '../services/macronutrient/GetMacronutrientService';
+// import GetMacronutrientService from '../services/macronutrient/GetMacronutrientService';
 
 const macronutrientsRoutes = Router();
 

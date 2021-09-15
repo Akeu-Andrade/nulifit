@@ -1,12 +1,12 @@
-import Macronutrient from '../../models/Macronutrient';
-import User from '../../models/User';
-import { getCustomRepository } from 'typeorm';
-import MacronutrientsRepository from '../../repositories/MacronutrientsRepository';
-import AppError from '../../errors/AppError';
+// import Macronutrient from '../../models/Macronutrient';
+// import User from '../../models/User';
+// import { getCustomRepository } from 'typeorm';
+// import MacronutrientsRepository from '../../repositories/MacronutrientsRepository';
+// import AppError from '../../errors/AppError';
 
-interface Request{ 
-    userId: string
-}
+// interface Request{ 
+//     userId: string
+// }
 
 // class GetMacronutrientService{
 //     public async execute({userId}: Request): Promise<Macronutrient>{
@@ -23,4 +23,4 @@ interface Request{
 //     }
 // }
 
-export default GetMacronutrientService;
+// export default GetMacronutrientService;
