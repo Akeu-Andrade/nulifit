@@ -1,5 +1,4 @@
 import Macronutrient from '../../models/Macronutrient';
-import User from '../../models/User';
 import { getCustomRepository } from 'typeorm';
 import MacronutrientsRepository from '../../repositories/MacronutrientsRepository';
 
@@ -9,10 +8,11 @@ interface Request{
 
 class GetMacronutrientService{
     public async execute({userId}: Request): Promise<Macronutrient>{
-
         const macronutrientsRepository = getCustomRepository(MacronutrientsRepository);
         
-        const macronutrient = await macronutrientsRepository.findByUserId(userId);
+        const macronutrient = macronutrientsRepository.findOne({
+            userId
+        });
 
         return macronutrient; 
     }
