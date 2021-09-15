@@ -35,14 +35,16 @@ datasheetsRoutes.post('/', async (request, response)=> {
             calories = calories - 200;
         }
         var protein = 2 * weight;
+        protein = Math.floor( protein );
         var fats = 0;
         if(sex == 1){
             fats = 1 * weight;
         } else {
             fats = 0.8 * weight;
         }
+        fats = Math.floor( fats );
         var carbohydrates = calories - protein;
-        carbohydrates = calories - fats;
+        carbohydrates = carbohydrates - fats;
 
         const macronutrient = await createMacronutrients.execute({
             userId, calories, protein, carbohydrates, fats
