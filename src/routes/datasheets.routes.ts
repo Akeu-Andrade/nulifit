@@ -27,7 +27,12 @@ datasheetsRoutes.post('/', async (request, response)=> {
         {
             age--;
         }
-        var calories = 1.3 * (66.47 + (13.75 * weight) + (5 * height) - (6.8 * age));
+        var calories = 1.3 * (66.47 + (13.75 * weight) + (5 * height * 100) - (6.8 * age));
+        if(goal == 2){
+            calories = calories + 200;
+        } else if(goal == 3){
+            calories = calories - 200;
+        }
         var protein = 2 * weight;
         var fats = 0;
         if(sex == 1){
