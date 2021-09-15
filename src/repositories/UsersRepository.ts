@@ -10,6 +10,14 @@ class UsersRepository extends Repository<User>{
 
         return findUser || null;
     }
+
+    public async findById(id: string): Promise<User | null> {
+        const findUser = await this.findOne({
+            where: { id },
+        });
+
+        return findUser || null;
+    }
 }
 
 export default UsersRepository;

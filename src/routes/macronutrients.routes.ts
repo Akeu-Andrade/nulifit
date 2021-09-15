@@ -19,6 +19,18 @@ macronutrientsRoutes.post('/', async (request, response)=> {
     
 })
 
+macronutrientsRoutes.get('/', async (request, response)=> {
+
+    const {userId} = request.body;
+
+    const createMacronutrients = new CreateMacronutrientsService();
+
+    const macronutrient = await createMacronutrients.execute(userId);
+
+    return response.json(macronutrient);
+    
+})
+
 
 export default macronutrientsRoutes;
 

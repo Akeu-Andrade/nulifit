@@ -10,6 +10,7 @@ class MacronutrientsRepository extends Repository<Macronutrient>{
 
         return findMacronutrient || null;
     }
+    
 }
 
 export default MacronutrientsRepository;
