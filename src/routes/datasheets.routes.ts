@@ -28,7 +28,7 @@ datasheetsRoutes.post('/', async (request, response)=> {
             age--;
         }
         var calories = 1.3 * (66.47 + (13.75 * weight) + (5 * height * 100) - (6.8 * age));
-        calories.toFixed(0);
+        calories = Math.floor( calories );
         if(goal == 2){
             calories = calories + 200;
         } else if(goal == 3){
@@ -41,8 +41,8 @@ datasheetsRoutes.post('/', async (request, response)=> {
         } else {
             fats = 0.8 * weight;
         }
-        var carbohydrates = calories - protein - fats;
-        carbohydrates.toFixed(0);
+        var carbohydrates = calories - protein;
+        carbohydrates = calories - fats;
 
         const macronutrient = await createMacronutrients.execute({
             userId, calories, protein, carbohydrates, fats
