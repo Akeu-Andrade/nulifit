@@ -18,8 +18,7 @@ datasheetsRoutes.post('/', async (request, response)=> {
         userId, sex, birthDate, height, weight, goal
     });
 
-    if (!datasheet){
-
+    if (datasheet){
         var today = new Date();
         var birthD = new Date(birthDate);
         var age = today.getFullYear() - birthD.getFullYear();
