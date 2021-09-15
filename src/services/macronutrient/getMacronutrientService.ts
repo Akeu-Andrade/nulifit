@@ -1,6 +1,6 @@
 import Macronutrient from '../../models/Macronutrient';
 import User from '../../models/User';
-import { getCustomRepository, getRepository } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 import MacronutrientsRepository from '../../repositories/MacronutrientsRepository';
 import AppError from '../../errors/AppError';
 
