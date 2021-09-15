@@ -30,7 +30,10 @@ macronutrientsRoutes.post('/user/', async (request, response)=> {
         userId
     });
 
-    return response.json(macronutrient);
+    var array = new Array();
+    array.push(macronutrient);
+
+    return response.json(array);
     
 })
 
