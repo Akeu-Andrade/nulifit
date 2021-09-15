@@ -31,7 +31,20 @@ macronutrientsRoutes.post('/user/', async (request, response)=> {
     });
 
     var array = new Array();
-    array.push(macronutrient);
+    var Carboidratos = {
+        title: "Carboidratos",
+        body: "Os carboidratos evitam que as proteínas dos tecidos sejam utilizadas para o fornecimento de energia.",
+        value: macronutrient.carbohydrates,
+        un: 'g'
+    }
+    array.push(Carboidratos);
+    var Proteinas = {
+        title: "Proteínas",
+        body: "As proteínas são necessárias para o crescimento, construção e reparação dos tecidos e estão presentes também na constituição das células.",
+        value: macronutrient.protein,
+        un: 'g'
+    }
+    array.push(Proteinas);
 
     return response.json(array);
     
