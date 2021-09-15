@@ -30,7 +30,33 @@ macronutrientsRoutes.post('/user/', async (request, response)=> {
         userId
     });
 
-    return response.json(macronutrient);
+    var array = new Array();
+    array.push({
+        title: "Carboidratos",
+        body: "Os carboidratos evitam que as proteínas dos tecidos sejam utilizadas para o fornecimento de energia.",
+        value: macronutrient.carbohydrates,
+        un: 'g'
+      },
+      {
+        title: "Proteínas",
+        body: "As proteínas são necessárias para o crescimento, construção e reparação dos tecidos e estão presentes também na constituição das células.",
+        value: macronutrient.protein,
+        un: 'g'
+      },
+      {
+        title: "Gorduras",
+        body: "As gorduras protegem os órgãos contra lesões, ajuda a manter a temperatura do corpo, a absorver algumas vitaminas e a dar sensação de saciedade.",
+        value: macronutrient.fats,
+        un: 'g'
+      },
+      {
+        title: "Calorias",
+        body: "As calorias é quantidade de energia necessária para elevar a temperatura de 1 grama de água de 14,5 oC para 15,5 oC.",
+        value: macronutrient.calories,
+        un: 'kcal'
+      });
+
+    return array;
     
 })
 
